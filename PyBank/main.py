@@ -55,14 +55,15 @@ with open(filepath, 'r') as textfile:
     print(f"Greatest Decrease in Profits: {min_profit}")
 
     #Building results file path
-    filepath2=os.path.join('analysis', 'Results.csv')
+    filepath2=os.path.join('analysis', 'Results.txt')
 
     #Opening and exporting results to new text file called Results.csv
-    with open(filepath2, 'w', newline='') as textfile2:
-        csvwriter=csv.writer(textfile2, delimiter=',')
-        csvwriter.writerow(["Total Months", "Total", "Average Change", "Greatest Increase in Profits", "Greatest Decrease in Profits"])
-        csvwriter.writerow([totalmonths, total, average_change, max_profit, min_profit])
-
+    with open(filepath2, 'w') as textfile2:
+        textfile2.write("Total Months: " + str(totalmonths) + "\n")
+        textfile2.write("Total: " + str(total) + "\n")
+        textfile2.write("Average Change: " + str(average_change) + "\n")
+        textfile2.write("Greatest Increase in Profits: " + str(max_profit) + "\n")
+        textfile2.write("Greatest Decrease in Profits: " + str(min_profit) + "\n")
 
 
 

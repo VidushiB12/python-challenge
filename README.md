@@ -35,4 +35,4 @@ Working with PyPoll and election_data CSV file:
 
         7. The winner is the one with the greatest percentage of votes, hence I found the max item of the percentage list.
 
-        8. The results have been printed accordingly and exported to a new text file called results.csv.
+        8. The results have been printed accordingly and exported to a new text file called results.txt.

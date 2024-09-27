@@ -56,16 +56,15 @@ with open(filepath, 'r') as textfile:
     print(f"Winner: {winner}")
     
     #Building file path for new file results.csv
-    filepath2=os.path.join('analysis','results.csv')
+    filepath2=os.path.join('analysis','results.txt')
 
-    with open(filepath2, 'w', newline='') as textfile2:
-        csvwriter=csv.writer(textfile2, delimiter=',')
-        csvwriter.writerow(["Total Votes", vote])
-
+    with open(filepath2, 'w') as textfile2:
+        textfile2.write(f"Total Votes: {vote}\n\n")
+            
         for j in range(len(vote_list)):
-            csvwriter.writerow([unique_candidates_list[j], percentage_list[j], vote_list[j]])
+            textfile2.write(f"Candidate: {unique_candidates_list[j]}, Percentage: {percentage_list[j]}, Votes: {vote_list[j]}\n")
         
-        csvwriter.writerow(["Winner", winner])
+        textfile2.write(f"\nWinner: {winner}")
 
     
         
